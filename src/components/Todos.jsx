@@ -12,14 +12,16 @@ function Todos() {
   const dispatch=useDispatch()
 
   return (
-    <div>
-      Todos
+    <div className='w-full flex flex-col justify-center items-center mt-6 bg-slate-300 text-white '>
+      <div className='text-black text-2xl mb-4 w-full text-center border-b font-mono'>Todos</div>
+      <div className=''>
       {todos.map((todo)=>(
         <li key={todo.id}>{todo.text}
-        <button onClick={(e)=>dispatch(removeTodo(todo.id))}>X</button>
+        <button onClick={(e)=>dispatch(removeTodo(todo.id))} className='ml-6 text-black'>X</button>
         </li>
         
       ))}
+      </div>
     </div>
   )
 }
